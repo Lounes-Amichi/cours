@@ -12,9 +12,12 @@ int main() {
 
     // Saisie des lignes
     do {
+        if (error == 3) {
+        	printf("3 saisies erronées, fin du programme. (Erreur 1)\n");
+        	return 1;
+	}
         printf("Combien de lignes voulez-vous saisir? (Entre 1 et %d)\n", TAILLE);
         scanf("%d", &nby);
-        if (error == 3) return 1;
         error++;
     } while (nby < 1 || nby > TAILLE);
     error = 0;

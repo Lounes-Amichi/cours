@@ -1,0 +1,9 @@
+Nom:Somme à n
+Entrées: n:entier
+Sorties: somme à n
+Principe: addition successives jusqu'à n
+
+début
+	Variables: n:entiers
+	écrire(n*(n+1)/2)
+fin

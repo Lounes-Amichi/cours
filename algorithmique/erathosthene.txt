@@ -1,0 +1,31 @@
+Nom: initTab
+Entrée: n: entier
+Résultat: un tableau tab de booléens de n valeurs.
+Principe: initialisation d'un tableau
+Fonction initTab(n:entier)
+début
+Variables : n, i: entiers, tab tableau
+	tab[0] <- Faux
+	tab[1] <- Faux
+	pour i allant de 2 à n faire
+		tab[i] <- Vrai
+	fin pour
+	retourner tab
+fin
+
+-
+
+Nom: crible
+Entrée: n: entier
+Résultat: booléen (vrai si aucun test du crible retourne faux)
+Principe crible d'Ératosthène
+Fonction crible(n:entier)
+début
+Variables n: entier, premier: bool
+
+
+
+Nom: Le crible d'Ératosthène
+Entrée: n: entier
+Résultat: un tableau tab de booléens (vrai si tab[i] est premier)
+Principe: Détermination des nombres premiers avec le crible d'Ératosthène

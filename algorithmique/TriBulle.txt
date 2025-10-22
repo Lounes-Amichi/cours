@@ -1,0 +1,24 @@
+Nom: TriBulle
+Entrées: tab[à, Max] d'entiers
+Sorties: un tableau trié dans l'ordre croissant
+Principe: tri à bulle
+
+début
+	Variables: n, i, k, aux:entiers, flag:booleen
+	n = Max
+	flag = vrai
+	k = 0
+	tant que flag faire
+		pour i allant de 0 à n - 1 - k faire
+			flag = faux
+			si tab[i+1] < tab[i] alors
+				flag = faux
+				aux = tab[i+1]
+				tab[i+1] = tab[i]
+				tab[i] = aux
+				flag = vrai
+			fin si
+		fin pour
+		k = k - 1
+	fin tant que
+fin

@@ -1,0 +1,19 @@
+Nom: TriInsertion
+Entrées: tab[à, Max] d'entiers
+Sorties: un tableau trié dans l'ordre croissant
+Principe: tri par insertion
+
+début
+	Variables: i, j, indice, aux:entiers
+	pour i allant de 1 à Max faire
+		tant que tab[i] < tab[ind-1] et indice >= 1 faire
+			indice = i-1
+		fin tant que
+		si indice != j alors
+			aux = tab[i]
+			pour j allant de i à indice faire
+				tab[j]= tab[j-1]
+			fin pour
+			tab[indice] = aux
+		fin si
+	fin pour

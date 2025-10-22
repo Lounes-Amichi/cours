@@ -1,0 +1,16 @@
+Nom: Factorielle
+Entrées: n (valeur de départ)
+Sorties: Factorielle de n
+Principe: Application récursive du principe de la factorielle
+
+début
+	Variable n: entier
+	fonction Factorielle(x:entier):entier début
+		si x > 1 alors
+			retourner x * Factorielle(x-1)
+		sinon
+			retourner 1
+		fin si
+	fin Factorielle
+	écrire(Factorielle(n))
+fin

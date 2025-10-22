@@ -1,0 +1,85 @@
+Nom: Décomposition en facteurs premiers
+Entrée: n: entier à décomposer
+Résultat: Affichage des facteurs premiers de n
+Principe: Division euclidienne successive
+
+Fonction Decomp(n: entier) 
+début
+	Variable: i: entier
+	i <- 2
+	écrire("n = ")
+	tant que n > 1 faire
+		tant que n mod i = 0 faire
+			n <- n div i
+			écrire(i, " * ")
+		fin tant que
+		i <- i + 1
+	fin tant que
+fin
+
+---
+
+Nom: IsPrime
+Entrée: n: entier à tester
+Résultat: booléen (vrai si n est premier)
+Principe: vérification de propriété
+
+Fonction IsPrime(n: entier): booléen
+début
+	Variable: rep: booléen
+	rep <- Vrai
+	si n = 0 ou n = 1 alors
+		retourner Faux
+	sinon si n >= 3 alors
+		pour i de 2 à n-1 faire
+			si n mod i = 0 alors
+				retourner Faux
+			fin si
+		fin pour
+	fin si
+	retourner Vrai
+fin
+
+---
+
+Nom: isAmicable
+Entrées: n, m: entiers
+Sortie: booléen (vrai si n et m sont amicaux)
+Principe: vérification de propriété
+
+Fonction sommeDiv(n: entier): entier
+début
+	Variables: i, sommeDiv: entiers
+	pour i de 1 à n-1 faire
+		si n mod i = 0 alors
+			sommeDiv <- sommeDiv + i
+		fin si
+	fin pour
+	retourner sommeDiv
+fin
+
+Fonction IsAmicable(n, m: entiers): booléen
+début
+	Variables: : entiers
+	si sommeDiv(n) != m alors
+		retourner Faux
+	sinon si sommeDiv(m) = n alors
+		retourner Vrai
+	fin si
+fin
+
+---
+Nom: isPerfect
+Entrée: n: entier
+Résultat: booléen (vrai si n est parfait)
+Principe: vérification de propriété
+
+Fonction isPerfect(n:entier) booléen:
+début
+	Variable: i: entier
+	si sommeDiv(n) = n
+		retourner Vrai
+	sinon
+		retourner Faux
+	fin si
+fin

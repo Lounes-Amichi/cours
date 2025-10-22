@@ -13,7 +13,10 @@ int main() {
         printf("Combien de valeurs voulez-vous saisir? (Entre 1 et %d)\n", TAILLE);
         scanf("%d", &nb);
         error++;
-        if (error == 3) return 1;
+        if (error == 3) {
+        	printf("3 saisies erronées, fin du programme. (Erreur 1)\n");
+        	return 1;
+        }
     } while (nb < 1 || nb > TAILLE);
 
     // Saisie des composantes du vecteur

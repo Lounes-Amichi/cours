@@ -1,0 +1,17 @@
+Nom : DécompSomme.
+Données : la somme à décomposer.
+Résultat : les nombres de billets et de pièces.
+Principe : on commence par lire, sur l'entrée standard, l'entier qui représente la
+somme d'argent. Puis on affecte la valeur à une variable somme.
+Pour obtenir la décomposition en nombre de billets et de pièces de la somme
+d'argent, on procède par divisions successives en conservant chaque fois le
+reste.
+
+début
+Variables: somme: entier
+ecrire("Quelle somme décomposer?")
+somme <- lire()
+pour chaque élément i dans [100, 50, 20, 10, 5, 2, 1] alors:
+	ecrire("rendre", somme div i, "billets/pièces de", i)
+	somme <- somme mod i
+
