@@ -1,0 +1,63 @@
+Structures de données:
+
+//constructeur de la structure
+Type  Tpile: enregistrement
+	corps: tableau[0, Max] d'éléments Telt
+	sommet: entier
+Fin enregistrement
+
+Pour accéder au tableau d'une pile P1: P1.corps
+Pour accéder au sommet d'une pile P1: P1.corps[P1.sommet]
+
+//Initialisation de la pile
+Fonction Initialisation(P:Tpile)
+debut
+	P.sommet <- 0
+fin
+
+//Test Pile vide
+Fonction Pile_vide(P:Tpile):booleen
+debut
+	retourner P.sommet = 0
+fin
+
+//Test Pile pleine
+Fonction Pile_pleine(P:Tpile):booleen
+debut
+	retourner P.sommet = Max
+fin
+
+//Empilage sur la pile
+Fonction empiler(P:Tpile, a:Telt): booleen
+debut
+	si non Pile_pleine(P) alors
+		P.sommet <- P.sommet + 1
+		P.corps[P.sommet] <- a
+		retourner Vrai
+	sinon
+		retourner Faux
+	fin si
+fin
+
+//Depilage sur la pile
+Fonction depiler(P:TPile, a;Telt): booleen
+debut
+	si non Pile_vide(P) alors
+		a <- P.corps[P.sommet]
+		P.sommet <- P.sommet - 1		
+		retourner Vrai
+	sinon
+		retourner Faux
+	fin si
+fin
+
+//Lecture du sommet sans dépiler
+Fonction sommet(P:Tpile, e:Telt): booleen
+debut
+	si non Pile_vide(P) alors
+		e <- P.corps[P.sommet]
+		retourner Vrai
+	sinon
+		retourner Faux
+	fin si
+fin

@@ -1,0 +1,12 @@
+Fonction decToBin()
+début
+	Initialisation(P)
+	Écrire("Entrez un entier à convertir")
+	n <- Lire()
+	tant que n > 0 faire
+		empiler(P, n mod 2)
+		n <- n div 2
+	fin tant que
+	tant que non Pile_vide(P) faire
+		depiler(P, e)
+		Écrire(e)
