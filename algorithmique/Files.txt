@@ -1,0 +1,16 @@
+Type Tfile: enregistrement
+corps: tableau [1..Max] d'éléments
+Fin: entier
+tete: entier
+fin enregistrement
+
+Fonction Init_File(F:Tfile)
+début
+F.fin <- 0
+F.tete <- 1
+fin
+
+Fonction File_Pleine(F:Tfile):booleen
+debut
+retourner F.fin (mod max + 1 = F.tete et Non (File_vide(F)))
+fin
