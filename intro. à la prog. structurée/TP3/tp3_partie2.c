@@ -73,11 +73,12 @@ int main()
             int aux;
             int min_id;
 
+            // Tri par insertion du tableau T1
             for (l = 2; l <= dernier; l++)
             {
-                T1[0] = T1[i];
+                T1[0] = T1[l];
                 m = l - 1;
-                while (T1[i] > T1[0])
+                while (T1[m] > T1[0])
                 {
                     T1[m + 1] = T1[m];
                     m--;

@@ -90,7 +90,7 @@ do
                 gettimeofday(&debut,NULL); //Date de debut de l'ajout  
                  
                 //appel de la fonction ajouter
-                ajouter(T1, &dernier, val, MAXCOMP);
+                if (ajouter(T1, &dernier, val, MAXCOMP) == 0) printf("L'ajout a échoué\n");
                 
                 gettimeofday(&fin,NULL); //Date de la fin de l'ajout
 				duree= (double)(fin.tv_sec*1000000+fin.tv_usec)-(debut.tv_sec*1000000+debut.tv_usec);				
@@ -106,7 +106,7 @@ do
                 gettimeofday(&debut, NULL); // Date de debut de la modification
 
                 //appel de la fonction modifier
-                if (modifier(T1, dernier, position, val) == 0.0) printf("La modification a échoué.");
+                if (modifier(T1, dernier, position, val) == 0.0) printf("La modification a échoué.\n");
 
                 gettimeofday(&fin,NULL); //Date de fin de la suppression
                 // if (position == 0.0)   printf("La modification a échoué.\n");
@@ -125,7 +125,7 @@ do
                 gettimeofday(&debut,NULL); //Date de debut de la suppression                
                 
                 //appel de la fonction supprimer
-                if (supprimer(T1, &dernier, position) == 0.0) printf("La suppression a échoué.");
+                if (supprimer(T1, &dernier, position) == 0.0) printf("La suppression a échoué.\n");
                 
                 gettimeofday(&fin,NULL); //Date de fin de la suppression 
                 if ((position!=0) && (debut.tv_sec==fin.tv_sec)) printf("La suppression de la valeur %.2lf dans un tableau de %d elements a pris %d us !!! \n",val, dernier,(int) (fin.tv_usec-debut.tv_usec)); 
@@ -266,6 +266,6 @@ element supprimer(element T[], int *taille, const int pos)
 
 void afficher_element(const element T[], const int taille, const int pos)
 {
-    if (pos > taille) printf("Erreur: La position est en dehors du tableau.");
+    if (pos > taille) printf("Erreur: La position est en dehors du tableau.\n");
     else printf("%lf\n",T[pos]);
 }
