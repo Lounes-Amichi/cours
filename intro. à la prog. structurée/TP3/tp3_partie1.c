@@ -3,7 +3,7 @@
 /* Application : tp3_partie1.c - traitement de base sur les tableaux non tries                 */
 /* Date : 08/11/2021                                                                           */
 /* Version : 1.0                                                                               */
-/* Compilation : gcc tp3_partie1.c -o tp3_partie1 -lm 					        */
+/* Compilation : gcc tp3_partie1.c -o tp3_partie1 -lm 					       */
 /* Utilisation : ./tp3_partiel1                                                                */
 /***********************************************************************************************/
 

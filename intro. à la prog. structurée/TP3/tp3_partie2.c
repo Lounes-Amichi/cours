@@ -3,7 +3,7 @@
 /* Application : tp3_partie2.c - traitement de base sur les tableaux triés                     */
 /* Date : 08/11/2021                                                                           */
 /* Version : 1.0                                                                               */
-/* Compilation : gcc tp3_partie2.c -o tp3_partie2 -lm 					                       */
+/* Compilation : gcc tp3_partie2.c -o tp3_partie2 -lm 					       */
 /* Utilisation : ./tp3_partie2                                                                 */
 /***********************************************************************************************/
 
@@ -15,7 +15,7 @@
 // Prototypes des fonctions
 //  Le type "element" est defini dans "generation_tp3.h"
 void lister(const element T[], int taille);
-int ajouter(element T[], int *taille, element valeur, int taillemax);
+int ajouter(element T[], int *taille, element valeur, int taillemax, int mode); //Le switch est utilisé pour différencier les fonctions d'ajout en fonction du tableau utilisé (aléatoire/ordonné/inversé)
 int rechercher(element T[], const int taille, const element valeur);
 element modifier(element T[], const int taille, const int pos, const element valeur);
 element supprimer(element T[], int *taille, const int pos);
@@ -32,6 +32,7 @@ int main()
     struct timeval debut, fin;
     int choix; // Saisie reponse user pour le choix de la methode de generation du tableau
     int i;     // compteur de boucle
+    int mode;  // sélecteur de mode pour le type de tableau
 
     do
     {
@@ -66,12 +67,42 @@ int main()
                 printf("Entrer la taille du tableau a generer : ");
                 scanf("%d", &dernier);
             } while ((dernier < 1) || (dernier > MAXCOMP));
+            
+            printf("\n\nGeneration d'un tableau:\n");
+            printf("1 - de manière aléatoire  \n");
+            printf("2 - de manière ordonnée \n");
+            printf("3 - de manière ordonnée inverse \n");
+            printf(" Votre choix: ");
+            scanf("%d", &choix);
+            switch (choix) {
+            case 1:
+            genealea(T1, dernier);
+            mode = 0;
+            break;
+            case 2:
+            geneord(T1, dernier);
+            mode = 1;
+            break;
+            case 3:
+            geneord(T1, dernier);
+            mode = 2;
+            int i = 1;
+            int l = dernier;
+	    while (i < l) {
+		int tmp = T1[i];
+		T1[i] = T1[l];
+		T1[l] = tmp;
+		i++;
+		l--;
+	    }
+            break;
+            }
+            
+/* CODE POUR LA PARTIE 2            
             genealea(T1, dernier);
 
             int l;
             int m;
-            int aux;
-            int min_id;
 
             // Tri par insertion du tableau T1
             for (l = 2; l <= dernier; l++)
@@ -84,7 +115,7 @@ int main()
                     m--;
                 }
                 T1[m + 1] = T1[0];
-            }
+            }*/
 
             break;
         case 2:
@@ -113,7 +144,7 @@ int main()
             gettimeofday(&debut, NULL); // Date de debut de l'ajout
             
             //appel de la fonction ajouter
-            if (rechercher(T1, dernier, val) == 0) ajouter(T1, &dernier, val, MAXCOMP);
+            if (rechercher(T1, dernier, val) == 0) ajouter(T1, &dernier, val, MAXCOMP, mode); //Le switch est utilisé pour différencier les fonctions d'ajout en fonction du tableau utilisé (aléatoire/ordonné/inversé)
             else printf("Valeur déja présente");
 
             gettimeofday(&fin, NULL); // Date de la fin de l'ajout
@@ -250,21 +281,48 @@ int rechercher(element T[], const int taille, const element valeur)
 /* Sorties : T le tableau, taille son nombre de composants                                        */
 /* Retourne : la position de l'element ajoute ou 0 si l'ajout n'est pas effectue                  */
 /**************************************************************************************************/
-int ajouter(element T[], int *taille, element valeur, int taillemax)
+int ajouter(element T[], int *taille, element valeur, int taillemax, int mode)
 {
     int j = *taille;
-    if (*taille < taillemax)
-    {
-        while ((valeur < T[j]) && (j > 0))
-        {
-            T[j + 1] = T[j];
-            j = j - 1;
-        }
-        T[j + 1] = valeur;
+    switch (mode) { // Le switch est utilisé pour différencier les fonctions d'ajout en fonction du tableau utilisé (aléatoire/ordonné/inversé)
+    	case 0:
+    	if ((*taille >= taillemax) || (rechercher(T, *taille, valeur) != 0)) return 0; // La deuxième condition évite les doublons dans le tableau
+    else {
         *taille = *taille + 1;
-        return j;
+        T[*taille] = valeur;
+        return 1;
+    }    
+    	break;
+    	
+    	case 1:
+	if (*taille < taillemax)
+	{
+		while ((valeur < T[j]) && (j > 0))
+		{
+		    	T[j + 1] = T[j];
+		    	j = j - 1;
+		}
+		T[j + 1] = valeur;
+		*taille = *taille + 1;
+		return j;
+	}
+	return 0;
+    	break;
+    	case 2:
+	if (*taille < taillemax)
+	{
+		while ((valeur > T[j]) && (j > 0))
+		{
+		    	T[j + 1] = T[j];
+		    	j = j - 1;
+		}
+		T[j + 1] = valeur;
+		*taille = *taille + 1;
+		return j;
+	}
+	return 0;
+    	break;
     }
-    return 0;
 }
 
 /**************************************************************************************************/
@@ -272,7 +330,7 @@ int ajouter(element T[], int *taille, element valeur, int taillemax)
 /* Description : Modifier la valeur de l'element en position pos dans un tableau                  */
 /* Entrees : T le tableau, taille son nombre de composantes et pos la position de l'element a     */
 /* modifier , valeur la nouvelle valeur de l'element		 				                      */
-/* Sorties : T le tableau									                                      */
+/* Sortns ce cies : T le tableau									                                      */
 /* Retourne : la valeur de l'element supprimé ou 0.0 si la suppression est impossible             */
 /**************************************************************************************************/
 element modifier(element T[], const int taille, const int pos, const element valeur)
