@@ -1,0 +1,31 @@
+Exercices (45-47)
+45:
+Depuis /home:
+- /etc/passwd
+- ../etc/passwd
+
+Depuis /etc:
+- /etc/passwd
+- ./passwd
+
+ls -a | grep "^\." OU ls -ad .*
+ls -al
+
+46:
+ls /etc
+ls -d /etc/p* 
+L'option -d sert à lister uniquement les dossiers
+
+ls affiche en couleurs car il existe un alias qui change le paramètre par défaut de l'argument --color
+--color=never
+-F ajoute un caractère qui permet de distinguer les types de fichiers
+
+ls -d /etc/*p
+ls -d /etc/?????
+ls -d /etc/????p
+
+47:
+Le shell utilisé est bash (/bin/bash)
+cd est une commande builtin (primitive)
+sans argument, cd retourne au home directory
+cd - retourne au répertoire de travail précédent ($OLDPWD)
