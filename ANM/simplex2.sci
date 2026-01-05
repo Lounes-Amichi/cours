@@ -24,6 +24,7 @@ function SOL=simplex2(m,Tvar)
       printf("\n Maximisation sur la variable %d",laColDuMax)
       //printf("\n leMax = %f",lemax)
     // où est la contrainte la + forte
+  laLigneDuMin=1
   if (m(1,laColDuMax)<>0) then
       lemin=m(1,NC)/m(1,laColDuMax)
       laLigneDuMin=1
