@@ -11,7 +11,7 @@
 /* Correction 1: rajout du 0 manquant de MAXCARS */
 #define  MAXCARS     80
 
-/* Correction 2: Suppression du point-virgule en trop à la fin du prototype */
+/* Correction 2: Ajout du point-virgule à la fin du prototype */
 char* formater_chaine(char ch[]); 
 
 int main()
@@ -27,8 +27,7 @@ int main()
         fgets(chaine_a_formater,MAXCARS+1,stdin);
         
         /* Correction 3: Suppression du crochet ']' en trop */
-        if(strlen(chaine_a_formater) > 0)
-            chaine_a_formater[strlen(chaine_a_formater)-1]='\0';     
+        chaine_a_formater[strlen(chaine_a_formater)-1]='\0';     
         
         printf("Chaine saisie : '%s' \n",chaine_a_formater);
         
@@ -44,8 +43,8 @@ int main()
         /* Correction 5: Suppression du RC (le \n reste sinon et bloque le prochain fgets) */
         getchar(); 
     }
-    /* Correction 6: while 'o' ou 'O' et == */
-    while (rep == 'o' || rep == 'O');  
+    /* Correction 6: != */
+    while ((rep!='o') && (rep!='O')); 
     
     printf("FIN PROGRAMME FORMATER CHAINE !!! \n");
     
