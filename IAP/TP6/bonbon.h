@@ -16,6 +16,7 @@ char * copierChaine(char * dest, const char * str);
 int validerPreferences(const char * ch);
 int rechercherSousChaine(const char * ch, const char * ssch);
 int retirerSousChaine(char * ch, const char * ssch);
+void afficherPortionsVendues(char * ch, char * noms[], char * prefs[], int montants[], int nbEnfants);
 
 #define MAXCAR 100
 typedef char Tchaine[MAXCAR+1];
