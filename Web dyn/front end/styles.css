@@ -1,0 +1,108 @@
+/* || Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&family=Noto+Sans&display=swap');
+
+/* || Variables */
+:root,
+[data-theme="dark"] {
+    --text: #f9ede1;
+    --background: #160d04;
+    --primary: #d88531;
+    --secondary: #241200;
+    --accent: #c26100;
+    --static: #ffffff1a;
+    --titleFont: 'Noto Sans';
+    --bodyFont: 'Merriweather Sans';
+}
+
+
+
+[data-theme="light"] {
+    --text: #1e1206;
+    --background: #fbf2e9;
+    --primary: #ce7a27;
+    --secondary: #ffeddb;
+    --accent: #ff9e3d;
+    --static: #0000001a;
+    --titleFont: 'Noto Sans';
+    --bodyFont: 'Merriweather Sans';
+}
+
+/* || Misc */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--background);
+    min-height: 100vh;
+    margin: 0px;
+    scroll-behavior: auto;
+}
+
+h1,
+h2 {
+    font-family: var(--titleFont);
+    color: var(--text);
+}
+
+h3,
+h4,
+h5,
+p,
+span,
+a,
+.text {
+    font-family: var(--bodyFont);
+    color: var(--text);
+    margin: 0px;
+    margin-top: 3px;
+}
+
+a {
+    color: var(--accent);
+}
+
+html {font-size: 100%;} /* 16px */
+h1 {font-size: 4.210rem; /* 67.36px */}
+h2 {font-size: 3.158rem; /* 50.56px */}
+h3 {font-size: 2.369rem; /* 37.92px */}
+h4 {font-size: 1.777rem; /* 28.48px */}
+h5 {font-size: 1.333rem; /* 21.28px */}
+small {font-size: 0.750rem; /* 12px */}
+    
+button {
+    background-color: var(--primary);
+    border: solid 1px var(--static);
+    border-radius: 5px;
+    color: var(--background);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--accent);
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.centerMain {
+    justify-content: center;
+}
+
+.centerCross {
+    align-items: center;
+}
