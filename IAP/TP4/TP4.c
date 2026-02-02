@@ -29,9 +29,9 @@ char* formater_chaine(char ch[]);
 
 //main
 int main() {
-    Tchaine ch1;
-    Tchaine ch2;
-    Tchaine straux;
+    Tchaine ch1 = "";
+    Tchaine ch2 = "";
+    Tchaine straux = "";
     int run = 1;
     int opt;
     int aux;

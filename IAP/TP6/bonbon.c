@@ -40,9 +40,29 @@ int retirerSousChaine(char * ch, const char * ssch) {
 	if(pos!=-1){
 		int lenss = strlen(ssch);
 		int lench = strlen(ch);
-		for(i = pos; i<= lench + 1 - pos - lenss; i++)
+		for(i = pos; i <= lench - lenss; i++)
 			ch[i]=ch[i+lenss];
+		ch[lench - lenss] = '\0';
 		return 1;
 	}
 	return 0;
+}
+
+void afficherPortionsVendues(char * chaine, char * noms[], char * prefs[], int montants[], int nbEnfants) {
+	int tot = 0;
+	int i;
+	for (i = 0; i < nbEnfants; i++) {
+		int achete = 0;
+		while (rechercherSousChaine(chaine, prefs[i]) != -1) {
+			if (retirerSousChaine(chaine, prefs[i])) {
+				printf("\n%s: Portion vendue \"%s\" pour %d euros.", noms[i], prefs[i], montants[i]);
+				tot += montants[i];
+				achete = 1;
+			}
+		}
+		if (!achete) {
+			printf("\n%s: Aucune portion vendue pour la preference \"%s\".", noms[i], prefs[i]);
+		}
+	}
+	printf("\nMontant total gagne: %d euros.", tot);
 }
