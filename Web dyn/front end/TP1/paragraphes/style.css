@@ -1,0 +1,21 @@
+.cadre {
+    border: 1px dashed black;
+    padding: 10px;
+    margin: 5px;
+}
+
+#premier {
+    background-color: lightgrey;
+}
+
+#second {
+    background-color: lightskyblue;
+}
+
+.contenu > p {
+    display: inline;
+}
+
+.titre {
+    border-bottom: 1px solid black;
+}
