@@ -1,0 +1,62 @@
+#bandeau {
+  position: fixed;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  height: 25px;
+  background-color: lightgray;
+  line-height: 25px;
+  text-align: center;
+}
+
+#contenu {
+  position: fixed;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  top: 35px;
+}
+
+#div_code, #div_rendu {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 50%;
+}
+
+#div_code {
+  left: 0px;
+  border: 1px solid black;
+}
+
+#div_rendu {
+  right: 0px;
+}
+
+#code {
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+#rendu {
+  position: absolute;
+  left: 5px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+

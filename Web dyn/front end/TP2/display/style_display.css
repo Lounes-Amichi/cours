@@ -1,0 +1,47 @@
+div {
+	border: 1px dashed black;
+	background-color:lightgrey;
+	height:50px;
+}
+
+.disp_inline{
+		display:inline;
+		height:50px;
+		
+}
+
+.disp_block{
+		display:block;
+		height:50px;
+}
+
+#popup{
+		height:100px;
+		width:100px;
+		padding:5px;
+		position:absolute;
+		top:50px;
+		right:50px;
+		display:none;
+		background-color:yellow;
+}
+
+#bouton_cacher {
+    display: none;
+}
+
+#bouton_afficher {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+

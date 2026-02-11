@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- **** H E A D **** -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Applications Multimédia pour le Web</title>
+
+  <link href="style_display.css" rel="stylesheet" type="text/css" />
+
+	<script src="display.js" type="text/javascript">
+    // Fonctions pour afficher/cacher la popup
+	</script>
+	
+</head>
+<!-- **** F I N **** H E A D **** -->
+
+<!-- **** B O D Y **** -->
+<body onload="init();">
+
+	avant 1
+	<div>Paragraphe 1 par défaut</div>
+	après 1
+	<hr />
+
+	avant 2
+	<div class="disp_block">Paragraphe 2 en mode display=block</div>
+	après 2
+
+	<hr />
+
+	avant 3
+	<div class="disp_inline">Paragraphe en mode display=inline</div>
+	après 3
+
+	<hr />
+
+	avant popup
+	<div id="popup">Paragraphe en mode display=none</div>
+	après popup
+
+	<hr />
+
+	<input id="bouton_afficher" type="button" value="Afficher popup" onclick="afficher_popup();"/>
+	<input id="bouton_cacher" type="button" value="Cacher popup" onclick="cacher_popup();"/>
+
+</body>
+
+<!-- **** F I N **** B O D Y **** -->
+
+
+</html>
