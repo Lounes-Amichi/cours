@@ -1,0 +1,29 @@
+body { font-family: Arial;  }
+
+#cv { width: 1000px; margin: 20px auto; padding: 10px; }
+
+.section {
+    float: left;
+    width: 45%;
+    margin: 2%;
+}
+
+.clear { clear: both; }
+
+#photo {
+	max-width:200px;
+	max-height:200px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dl,
+dd {
+  font-size: 0.9rem;
+}
+
+dd {
+  margin-bottom: 1em;
+}

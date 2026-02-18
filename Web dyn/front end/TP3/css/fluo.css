@@ -1,0 +1,16 @@
+#cv{
+	color: red;
+	background-color: yellow;
+}
+#header {
+	color: lightgreen;
+	background-color: purple;
+} 
+#sidebar {
+	color: purple;
+	background-color: lightgrey;
+} 
+#main {
+	color: blue;
+	background-color: lightblue;
+}

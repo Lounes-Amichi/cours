@@ -50,13 +50,52 @@
   border: 1px solid black;
 }
 
+#banniere {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    background-color: lightgrey;
+    text-align: center;
+}
 
+.cadre {
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0;
+    top: 30px;
+    padding: 3px;
+}
 
+#saisie {
+    left: 0;
+    right: 50%;
+}
 
+#visuel {
+    right: 0;
+    left: 50%;
+    border-left: none;
+}
 
+#taSaisie {
+    border: none;
+    resize: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    font-family: Arial;
+}
 
-
-
-
-
-
+#popup {
+    position: absolute;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    font-size: 70%;
+    width: 100px;
+    display: none;
+}

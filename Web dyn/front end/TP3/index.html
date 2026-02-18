@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CV</title>
+    <link id="designStyle" rel="stylesheet" href="css/one-column.css">
+    <link id="themeStyle" rel="stylesheet" href="css/nb.css">
+    
+    <style>
+      #banner {
+        background-color: lightgray;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding: 10px;
+      }
+      
+      @media print {
+        #banner {
+          display: none !important;
+        }
+      }
+    </style>
+    
+    <script src="js/data.js"></script>
+    <script src="js/styles.js"></script>
+    <script src="js/loader.js"></script>
+
+</head>
+
+<body onload="init();">
+
+<div id="banner">
+  <label for="design">Design :</label>
+  <select
+    id="design"
+    onchange="changeDesign();"></select>
+  <br />
+  
+  <label for="theme">Theme :</label>
+  <select
+    id="theme"
+    onchange="changeTheme();"></select>
+</div>
+
+
+<div id="cv">
+
+    <div id="header">
+        <img id="photo" src="" alt="">
+        <h1 id="name"></h1>
+        <h2 id="title"></h2>
+    </div>
+
+    <div id="content">
+
+        <div id="sidebar">
+            <div class="section">
+                <h3>Contact</h3>
+                <dl id="contact-list"></dl>
+            </div>
+
+            <div class="section">
+                <h3>Compétences</h3>
+                <ul id="skills-list"></ul>
+            </div>
+
+            <div class="section">
+                <h3>Langues</h3>
+                <ul id="languages-list"></ul>
+            </div>
+
+            <div class="section">
+                <h3>Loisirs</h3>
+                <ul id="hobbies-list"></ul>
+            </div>
+        </div>
+
+        <div id="main">
+
+            <div class="section">
+                <h3>Expérience</h3>
+                <div id="experiences-list"></div>
+            </div>
+
+            <div class="section">
+                <h3>Formation</h3>
+                <div id="education-list"></div>
+            </div>
+
+            <div class="section">
+                <h3>Projets</h3>
+                <div id="projects-list"></div>
+            </div>
+
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
