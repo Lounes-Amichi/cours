@@ -52,11 +52,13 @@ h5,
 p,
 span,
 a,
-.text {
+li {
     font-family: var(--bodyFont);
     color: var(--text);
     margin: 0px;
     margin-top: 3px;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 a {
@@ -127,6 +129,14 @@ button:hover {
     align-items: center;
 }
 
+.centerMain {
+    justify-content: center;
+}
+
+.centerCross {
+    align-items: center;
+}
+
 /* Navbar */
 
 nav {
@@ -154,7 +164,8 @@ gap: 5rem;
     gap: 2rem;
 }
 
-.nav-section > a > i {
+.nav-section > a > i,
+.list > li > i {
     font-size: 1.777rem;
     color: var(--primary);
 }
@@ -177,4 +188,61 @@ gap: 5rem;
 
 main {
     flex-grow: 1;
+    width: 100%;
+}
+
+main > .content-section {
+    border-bottom: solid 1px var(--static);
+    padding: 3rem 4rem;
+}
+
+.imageContainer {
+    max-width: 12rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 1.5rem;
+}
+
+.imageContainer>img {
+    max-width: 100%;
+}
+
+.card-section {
+    display: grid;
+    width: 100%;
+    height: 20rem;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 3fr);
+}
+
+.card {
+    border: solid 2px var(--static);
+    border-radius: 20px;
+    margin: 0.75rem 2rem;
+    background-color: var(--secondary);
+}
+
+#apropos-card-lang {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#apropos-card-qual {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#apropos-card-skills {
+    grid-column: 2;
+    grid-row: 1 / 3;
+}
+
+#apropos-card-hobbies {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+.list {
+    line-height: 1.5em;
 }
