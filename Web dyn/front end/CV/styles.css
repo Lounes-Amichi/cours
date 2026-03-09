@@ -2,24 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&family=Noto+Sans&display=swap');
 
 /* Variables */
-:root,
-[data-theme="light"] {
-    --text: #1e1206;
-    --background: #fbf2e9;
-    --primary: #ce7a27;
-    --secondary: #ffeddb;
-    --accent: #ff9e3d;
+
+:root[data-theme="light"] {
+    --text: #0a0910;
+    --background: #eae7ee;
+    --primary: #471cf2;
+    --primary2: #471cf266;
+    --secondary: #ada6d9;
+    --secondary2: #ada6d955;
+    --accent: #e8764c;
     --static: #0000001a;
     --titleFont: 'Noto Sans';
     --bodyFont: 'Merriweather Sans';
 }
 
-[data-theme="dark"] {
-    --text: #f9ede1;
-    --background: #160d04;
-    --primary: #d88531;
-    --secondary: #241200;
-    --accent: #c26100;
+:root[data-theme="dark"] {
+    --text: #f0eff6;
+    --background: #141118;
+    --primary: #380de3;
+    --primary2: #380de366;
+    --secondary: #2d2659;
+    --secondary2: #2d265955;
+    --accent: #b54117;
     --static: #ffffff1a;
     --titleFont: 'Noto Sans';
     --bodyFont: 'Merriweather Sans';
@@ -108,7 +112,7 @@ small {
 
 button {
     background-color: var(--primary);
-    border: solid 1px var(--static);
+    border: none;
     border-radius: 5px;
     color: var(--background);
     font-size: 100%;
@@ -117,7 +121,7 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-color: var(--accent);
+    background-color: var(--primary2);
 }
 
 .flexRow {
@@ -182,14 +186,19 @@ gap: 5rem;
     gap: 2rem;
 }
 
-.nav-section > a > i,
-ul > li > i {
+.nav-section > a > i {
     font-size: 1.777rem;
-    color: var(--primary);
+    color: var(--accent);
+}
+
+ul > li > i {
+    color: var(--accent);
+    font-size: 1.5rem;
+    vertical-align: middle;
 }
 
 .nav-section > a > i:hover {
-    color: var(--accent);
+    color: var(--primary2);
 }
 
 #nav-socials-section, 
@@ -234,7 +243,7 @@ main > .content-section {
 .grid-section {
     display: grid;
     width: 100%;
-    height: 20rem;
+    height: 25rem;
 }
 
 .card-section {
@@ -243,30 +252,33 @@ main > .content-section {
 }
 
 .card {
-    border: solid 2px var(--static);
     border-radius: 20px;
     margin: 0.75rem 2rem;
-    background-color: var(--secondary);
+    padding-top: 0.75rem;
 }
 
 #apropos-card-lang {
     grid-column: 1;
     grid-row: 1;
+    background-color: var(--primary2);
 }
 
 #apropos-card-qual {
     grid-column: 1;
     grid-row: 2;
+    background-color: var(--secondary);
 }
 
 #apropos-card-skills {
     grid-column: 2;
     grid-row: 1 / 3;
+    background-color: var(--secondary);
 }
 
 #apropos-card-hobbies {
     grid-column: 3;
     grid-row: 1 / 3;
+    background-color: var(--secondary2);
 }
 
 .form-section {
@@ -277,20 +289,19 @@ main > .content-section {
 
 .formation {
     position: relative;
-    border-left: solid 3px var(--primary);
+    border-left: solid 3px var(--secondary);
     padding-left: 1rem;
 }
 
-.formation::after {
+.formation::after { /* Stack Overflow pour positionner le point*/
     content: " ";
     position: absolute;
     left: -1px;
-    /* visual adjustment, because of the line-size of 1px */
     top: 0px;
     transform: translate(-50%, -50%);
     width: 0.75rem;
     height: 0.75rem;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     border-radius: 50%;
 }
 
