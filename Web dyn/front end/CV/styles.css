@@ -37,7 +37,6 @@ body {
     background-color: var(--background);
     min-height: 100vh;
     margin: 0px;
-    scroll-behavior: smooth;
 }
 
 h1,
@@ -49,6 +48,7 @@ h2 {
 h3,
 h4,
 h5,
+h6,
 p,
 span,
 a,
@@ -66,6 +66,7 @@ a {
 }
 
 html {
+    scroll-behavior: smooth;
     font-size: 100%;
     /* 16px */
 }
@@ -93,6 +94,11 @@ h4 {
 h5 {
     font-size: 1.333rem;
     /* 21.28px */
+}
+
+h6 {
+    font-size: 1rem;
+    /* 16px */
 }
 
 small {
@@ -137,15 +143,27 @@ button:hover {
     align-items: center;
 }
 
+.paddingTitle {
+    padding-bottom: 1rem;
+}
+
+ul {
+    line-height: 1.5em;
+}
+
 /* Navbar */
 
 nav {
+    background-color: var(--background);
+    position: sticky;
+    z-index: 2;
+    top: 0px;
     width: 100%;
     border-bottom: 1px solid var(--static);
 }
 
 nav > .nav-section {
-    padding: 1.5rem 2rem;
+    padding: 0rem 2rem;
     display: flex;
     gap: 1rem;
     border-left: 1px solid var(--static);
@@ -165,7 +183,7 @@ gap: 5rem;
 }
 
 .nav-section > a > i,
-.list > li > i {
+ul > li > i {
     font-size: 1.777rem;
     color: var(--primary);
 }
@@ -184,6 +202,10 @@ gap: 5rem;
     color: var(--text);
 }
 
+#nav-image-cont {
+    width: 4rem;
+}
+
 /* Main Content */
 
 main {
@@ -194,6 +216,7 @@ main {
 main > .content-section {
     border-bottom: solid 1px var(--static);
     padding: 3rem 4rem;
+    padding-bottom: 10rem;
 }
 
 .imageContainer {
@@ -208,10 +231,13 @@ main > .content-section {
     max-width: 100%;
 }
 
-.card-section {
+.grid-section {
     display: grid;
     width: 100%;
     height: 20rem;
+}
+
+.card-section {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 3fr);
 }
@@ -243,6 +269,31 @@ main > .content-section {
     grid-row: 1 / 3;
 }
 
-.list {
-    line-height: 1.5em;
+.form-section {
+    height: 15rem;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 3fr);
+}
+
+.formation {
+    position: relative;
+    border-left: solid 3px var(--primary);
+    padding-left: 1rem;
+}
+
+.formation::after {
+    content: " ";
+    position: absolute;
+    left: -1px;
+    /* visual adjustment, because of the line-size of 1px */
+    top: 0px;
+    transform: translate(-50%, -50%);
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+.formation > * {
+    max-width: 95%;
 }

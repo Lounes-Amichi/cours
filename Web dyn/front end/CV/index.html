@@ -11,7 +11,10 @@
 <body class="flexCol">
     <nav class="flexRow">
         <div class="nav-section" id="nav-profile-section">
-        <a href="#"><i class="fa-solid fa-at"></i> Lounès Amichi</a>
+        <a href="#" class="flexRow center">
+            <div id="nav-image-cont" class="imageContainer">
+                <img src="https://placehold.co/500x500" alt="profile" />
+            </div>Lounès Amichi</a>
         </div>
         <div class="nav-section center" id="nav-link-section">
             <a href="#apropos">À propos</a>
@@ -42,10 +45,10 @@
                     <h3>Élève ingénieur - IG2I</h3>
                 </div>
             </div>
-            <div id="apropos-stats" class="card-section">
+            <div id="apropos-stats" class="card-section grid-section">
                 <div id="apropos-card-lang" class="card flexCol centerCross">
                     <h5>Langues</h5>
-                    <ul class="list">
+                    <ul>
                         <li>Français - Langue Maternelle</li>
                         <li>Anglais - Niveau C1 Bilingue</li>
                         <li>Espagnol - Niveau B1 Débutant</li>
@@ -53,7 +56,7 @@
                 </div>
                 <div id="apropos-card-qual" class="card flexCol centerCross">
                     <h5>Qualités</h5>
-                    <ul class="list">
+                    <ul>
                         <li>Autonome</li>
                         <li>Grand Esprit d'équipe</li>
                         <li>Sociable</li>
@@ -62,7 +65,7 @@
                 </div>
                 <div id="apropos-card-skills" class="card flexCol centerCross">
                     <h5>Compétences</h5>
-                    <ul class="list">
+                    <ul>
                         <li><i class="fa-brands fa-html5"></i> HTML/CSS</li>
                         <li><i class="fa-brands fa-js"></i> Javascript</li>
                         <li><i class="fa-brands fa-python"></i> Python</li>
@@ -72,7 +75,7 @@
                 </div>
                 <div id="apropos-card-hobbies" class="card flexCol centerCross">
                     <h5>Centres d'intérêts</h5>
-                    <ul class="list">
+                    <ul>
                         <li><i class="fa-solid fa-flag-checkered"></i> Sport Automobile</li>
                         <li><i class="fa-solid fa-camera"></i> Photographie</li>
                         <li><i class="fa-solid fa-gamepad"></i> Jeux Vidéos</li>
@@ -83,8 +86,46 @@
             </div>
             <div></div>
         </div>
-        <div id="formations" class="content-section"></div>
-        <div id="projets" class="content-section"></div>
+        <div id="formations" class="content-section">
+            <h3 class="paddingTitle">Formations et expériences</h3>
+            <div id="formations-section" class="form-section grid-section">
+                <div id="form-1" class="formation">
+                    <h4>2025-2030: Ingénieur du Numérique</h4>
+                    <h5 class="paddingTitle">Centrale Lille IG2I - Lens</h5>
+                    <p>Première année d'ingénierie informatique et
+                    industrielle</p>
+                </div>
+                <div id="form-2" class="formation">
+                    <h4>2022-2025: Baccalauréat Général</h4>
+                    <h5 class="paddingTitle">Lycée EPID - Dunkerque</h5>
+                    <p>Spécialités Mathématiques et NSI</p>
+                    <p>Admis mention Très Bien</p>
+                    <p>Mention Section Européenne Anglais</p>
+                </div>
+                <div id="form-3" class="formation">
+                    <h4 class="paddingTitle">Autres Certifications</h4>
+                    <ul>
+                        <li>2025 - Cambridge FIRST - Niveau C1 (Score 184/190)</li>
+                        <li>2025 - PIX - Niveau Expert 1 (Score 784)</li>
+                        <li>2022 - Prévention et Secours Civiques 1</li>
+                    </ul>
+                </div>
+                <div id="form-4" class="formation">
+                    <h4>2021/2022: Stages d'observation</h4>
+                    <h5 class="paddingTitle">Centrale Nucléaire de Gravelines</h5>
+                    <p>Services Méthodes Systèmes Information et Performance Chimie Environnement</p>
+                </div>
+            </div>
+        </div>
+        <div id="projets" class="content-section">
+            <h3 class="paddingTitle">Projets</h3>
+            <div id="projets-section" class="proj-section grid-section">
+            <div id="projet1" class="projet"></div>
+            <div id="projet2" class="projet"></div>
+            <div id="projet3" class="projet"></div>
+            <div id="projet4" class="projet"></div>
+            </div>
+        </div>
     </main>
 
     <script src="themeManager.js"></script>
