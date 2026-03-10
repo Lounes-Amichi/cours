@@ -2,18 +2,33 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lounès Amichi - CV</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="flexCol">
+<body id="doc-body" class="flexCol">
+    <div id="contact-GUI" class="contact-background flexCol center noDisplay">
+        <div class="contact-cont flexCol center">
+            <h3 class="bigPaddingTitle">Me Contacter</h3>
+            <form class="flexCol contact-form center" id="contact-form" onsubmit="formSubmit(event);">
+                <input type="text" name="nom" id="form-nom" class="form-input text" placeholder=" Votre Nom" required>
+                <input type="text" name="prenom" id="form-prenom" class="form-input text" placeholder=" Votre Prénom" required>
+                <input type="email" name="mail" id="form-email" class="form-input text" placeholder=" Votre Email" required>
+                <textarea name="message" id="form-message" cols="50" rows="10" class="form-input text" maxlength="1000" placeholder=" Votre Message">Ce formulaire est un exemple, il ne renvoie rien pour l'instant.</textarea>
+                <div class="flexRow center">
+                    <button type="reset" class="form-button text" id="form-cancel" onclick="toggleForm();">Annuler</button>
+                    <button type="submit" class="form-button text">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <nav class="flexRow">
         <div class="nav-section" id="nav-profile-section">
         <a href="#" class="flexRow center">
             <div id="nav-image-cont" class="imageContainer">
-                <img src="https://placehold.co/500x500" alt="profile" />
+                <img src="img/profil.jpg" alt="profile">
             </div>Lounès Amichi</a>
         </div>
         <div class="nav-section center" id="nav-link-section">
@@ -30,7 +45,7 @@
             </a>
         </div>
         <div class="nav-section center" id="nav-contact-section">
-            <button>Contacter</button>
+            <button onclick="toggleForm();">Contacter</button>
         </div>
     </nav>
 
@@ -38,16 +53,16 @@
         <div id="apropos" class="content-section flexCol">
             <div id="apropos-profile" class="flexRow">
                 <div id="main-image-cont" class="imageContainer">
-                    <img src="https://placehold.co/500x500" alt="profile" />
+                    <img src="img/profil.jpg" alt="profile">
                 </div>
                 <div id="apropos-profile-info" class="flexCol centerMain">
-                    <h1>Lounès Amichi</h1>
+                    <h2>Lounès Amichi</h2>
                     <h3>Élève ingénieur - IG2I</h3>
                 </div>
             </div>
             <div id="apropos-stats" class="card-section grid-section">
                 <div id="apropos-card-lang" class="card flexCol centerCross">
-                    <h5 class="paddingTitle">Langues</h5>
+                    <h4 class="smallPaddingTitle">Langues</h4>
                     <ul>
                         <li>Français - Langue Maternelle</li>
                         <li>Anglais - Niveau C1 Bilingue</li>
@@ -55,7 +70,7 @@
                     </ul>
                 </div>
                 <div id="apropos-card-qual" class="card flexCol centerCross">
-                    <h5 class="paddingTitle">Qualités</h5>
+                    <h4 class="smallPaddingTitle">Qualités</h4>
                     <ul>
                         <li>Autonome</li>
                         <li>Grand Esprit d'équipe</li>
@@ -64,7 +79,7 @@
                     </ul>
                 </div>
                 <div id="apropos-card-skills" class="card flexCol centerCross">
-                    <h5 class="paddingTitle">Compétences</h5>
+                    <h4 class="smallPaddingTitle">Compétences</h4>
                     <ul>
                         <li><i class="fa-brands fa-html5"></i> HTML/CSS</li>
                         <li><i class="fa-brands fa-js"></i> Javascript</li>
@@ -74,7 +89,7 @@
                     </ul>
                 </div>
                 <div id="apropos-card-hobbies" class="card flexCol centerCross">
-                    <h5 class="paddingTitle">Centres d'intérêts</h5>
+                    <h4 class="smallPaddingTitle">Centres d'intérêts</h4>
                     <ul>
                         <li><i class="fa-solid fa-flag-checkered"></i> Sport Automobile</li>
                         <li><i class="fa-solid fa-camera"></i> Photographie</li>
@@ -87,7 +102,7 @@
             <div></div>
         </div>
         <div id="formations" class="content-section">
-            <h3 class="paddingTitle">Formations et expériences</h3>
+            <h3 class="bigPaddingTitle">Formations et expériences</h3>
             <div id="formations-section" class="form-section grid-section">
                 <div id="form-1" class="formation">
                     <h4>2025-2030: Ingénieur du Numérique</h4>
@@ -105,8 +120,8 @@
                 <div id="form-3" class="formation">
                     <h4 class="paddingTitle">Autres Certifications</h4>
                     <ul>
-                        <li>2025 - Cambridge FIRST - Niveau C1 (Score 184/190)</li>
-                        <li>2025 - PIX - Niveau Expert 1 (Score 784)</li>
+                        <li>2025 - Cambridge FIRST - Niveau C1<br>Score 184/190</li>
+                        <li>2025 - PIX - Niveau Expert 1<br>Score 784</li>
                         <li>2022 - Prévention et Secours Civiques 1</li>
                     </ul>
                 </div>
@@ -118,17 +133,58 @@
             </div>
         </div>
         <div id="projets" class="content-section">
-            <h3 class="paddingTitle">Projets</h3>
+            <h3 class="bigPaddingTitle">Projets</h3>
             <div id="projets-section" class="proj-section grid-section">
-            <div id="projet1" class="projet"></div>
-            <div id="projet2" class="projet"></div>
-            <div id="projet3" class="projet"></div>
-            <div id="projet4" class="projet"></div>
+                <div id="projet1" class="card flexCol centerCross">
+                    <h4 class="paddingTitle">Trailblazer</h4>
+                    <div class="card-image-cont">
+                        <img src="img/logo_TrailBlazer.png" alt="Trailblazer" id="img-trailblazer">
+                    </div>
+                    <p>
+                        TrailBlazer est un jeu créé pour l'édition 2025 des Trophées NSI. <br>Codé entièrement en Python,
+                        c'est un jeu de course en vue du dessus dans lequel le joueur crée ses propres circuits.
+                    </p>
+                </div>
+                <div id="projet2" class="card flexCol centerCross">
+                    <h4 class="paddingTitle">Site web de Théâtre</h4>
+                    <div class="card-image-cont">
+                        <img src="img/theatre.png" alt="Site web de théâtre">
+                    </div>
+                    <p>
+                        J'ai créé ce site pour un devoir de théâtre. Il retrace tout mon parcours de théâtre lors de
+                        mon année de Terminale. Il a été codé dans les langages classiques du web: HTML/JS/CSS.
+                    </p>
+                </div>
+                <div id="projet3" class="card flexCol centerCross">
+                    <h4 class="paddingTitle">Taskminder</h4>
+                    <div class="card-image-cont">
+                        <img src="img/taskminder.png" alt="Taskminder">
+                    </div>
+                    <p>
+                        Au départ une simple expérience avec PHP et la gestion de fichiers CSV, ce projet a rapidement
+                        grandi en un projet plus grand. C'est le premier site web pour lequel j'ai prévu le design à l'avance.
+                    </p>
+                </div>
+                <div id="projet4" class="card flexCol centerCross">
+                    <h4 class="paddingTitle">Un premier portfolio</h4>
+                    <div class="card-image-cont">
+                        <img src="img/portfolio.png" alt="Un premier portfolio">
+                    </div>
+                    <p>
+                        Je me suis lancé un défi pour développer ce portfolio. Je me suis donné une semaine pour apprendre à utiliser
+                        React et j'ai codé l'intégralité de la page avec. Celui-ci sera refondu complètement bientôt.
+                    </p>
+                </div>
             </div>
         </div>
+        <footer class="flexRow centerCross">
+            <small>2026 - AMICHI Lounès</small>
+            <button onclick="toggleTheme()">Changer de thème</button>
+        </footer>
     </main>
 
     <script src="themeManager.js"></script>
+    <script src="contact.js"></script>
     <script src="https://kit.fontawesome.com/cc6ede69cb.js" crossorigin="anonymous"></script>
 </body>
 

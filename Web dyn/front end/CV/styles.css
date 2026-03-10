@@ -54,6 +54,7 @@ h4,
 h5,
 h6,
 p,
+small,
 span,
 a,
 li {
@@ -111,12 +112,13 @@ small {
 }
 
 button {
+    font-family: var(--bodyFont);
     background-color: var(--primary);
     border: none;
     border-radius: 5px;
     color: var(--background);
     font-size: 100%;
-    padding: 7.5%;
+    padding: 0.75em;
 }
 
 button:hover {
@@ -149,6 +151,14 @@ button:hover {
 
 .paddingTitle {
     padding-bottom: 1rem;
+}
+
+.smallPaddingTitle {
+    padding-bottom: 0.5rem;
+}
+
+.bigPaddingTitle {
+    padding-bottom: 1.5rem;
 }
 
 ul {
@@ -186,18 +196,18 @@ gap: 5rem;
     gap: 2rem;
 }
 
-.nav-section > a > i {
+.nav-section i {
     font-size: 1.777rem;
     color: var(--accent);
 }
 
-ul > li > i {
+ul i {
     color: var(--accent);
     font-size: 1.5rem;
     vertical-align: middle;
 }
 
-.nav-section > a > i:hover {
+.nav-section i:hover {
     color: var(--primary2);
 }
 
@@ -206,7 +216,7 @@ ul > li > i {
     flex-grow: 1;
 }
 
-.nav-section > a {
+.nav-section a {
     text-decoration: none;
     color: var(--text);
 }
@@ -223,6 +233,7 @@ main {
 }
 
 main > .content-section {
+    scroll-margin-top: 5rem;
     border-bottom: solid 1px var(--static);
     padding: 3rem 4rem;
     padding-bottom: 10rem;
@@ -236,8 +247,18 @@ main > .content-section {
     margin: 1.5rem;
 }
 
-.imageContainer>img {
+.imageContainer img,
+.card-image-cont img {
     max-width: 100%;
+}
+
+.card-image-cont {
+    width: 90%;
+    aspect-ratio: 16/9;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    vertical-align: middle;
 }
 
 .grid-section {
@@ -278,7 +299,13 @@ main > .content-section {
 #apropos-card-hobbies {
     grid-column: 3;
     grid-row: 1 / 3;
-    background-color: var(--secondary2);
+    background-color: var(--primary2);
+}
+
+#apropos-card-hobbies li,
+#apropos-card-skills li {
+    font-size: 1.333rem;
+    line-height: 150%;
 }
 
 .form-section {
@@ -289,7 +316,7 @@ main > .content-section {
 
 .formation {
     position: relative;
-    border-left: solid 3px var(--secondary);
+    border-left: solid 3px var(--accent);
     padding-left: 1rem;
 }
 
@@ -301,10 +328,100 @@ main > .content-section {
     transform: translate(-50%, -50%);
     width: 0.75rem;
     height: 0.75rem;
-    background-color: var(--secondary);
+    background-color: var(--accent);
     border-radius: 50%;
 }
 
 .formation > * {
     max-width: 95%;
+}
+
+.proj-section {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 3fr);
+    height: 27rem;
+}
+
+.proj-section > .card {
+    margin: 0.75rem 1rem;
+}
+
+.proj-section> .card p {
+    max-width: 90%;
+}
+
+#projet1, #projet3 {
+    background-color: var(--secondary);
+}
+
+#projet2, #projet4 {
+    background-color: var(--primary2);
+}
+
+#img-trailblazer {
+    position: relative;
+    top: -40%;
+}
+
+/* Contact form */
+
+.contact-background {
+    position: fixed;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--accentColor);
+    backdrop-filter: blur(1.5rem);
+}
+
+.contact-cont {
+    width: 50%;
+    height: 60%;
+    background-color: var(--secondary2);
+    border: solid 2px var(--static);
+    border-radius: 25px;
+}
+
+.contact-form {
+    width: 100%;
+    min-height: 50%;
+}
+
+.form-input {
+    width: 50%;
+    min-height: 7.5%;
+    margin-bottom: 2%;
+    background-color: var(--accentColor);
+    border: solid 1px var(--static);
+    border-radius: 5px;
+    color: var(--text);
+}
+
+.form-input::placeholder {
+    color: var(--text);
+}
+
+.form-button {
+    margin: 0px 3rem;
+}
+
+#form-cancel {
+    background-color: var(--primary2);
+}
+
+#form-cancel:hover {
+    background-color: var(--accent);
+}
+
+.noDisplay {
+    display: none;
+}
+
+.noOverflow {
+    overflow: hidden;
+}
+
+footer {
+    padding: 1rem 2rem;
+    gap: 10rem;
 }

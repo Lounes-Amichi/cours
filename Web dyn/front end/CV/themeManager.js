@@ -9,6 +9,7 @@ function toggleTheme() {
     } else {
         setTheme("light");
     }
+    return localStorage.getItem("theme");
 }
 
 window.onload = (event) => {
