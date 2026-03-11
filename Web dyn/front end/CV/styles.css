@@ -423,5 +423,5 @@ main > .content-section {
 
 footer {
     padding: 1rem 2rem;
-    gap: 10rem;
+    justify-content: space-between;
 }
