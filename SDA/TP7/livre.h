@@ -3,15 +3,17 @@
 
 #include "es.h"
 
-# define MAX 20
-# define MAX_TITRE 60
+# define MAX 40
+# define MAX_TITRE 100
 # define MAX_CODE 6
+# define MAX_ANNEE 5
 
 # define K_MaxTit MAX_TITRE
 # define K_MaxAut MAX
 # define K_MaxEdit MAX
 # define K_MaxEmp MAX
 # define K_MaxCode MAX_CODE
+# define K_MaxAnn MAX_ANNEE
 
 typedef char T_Titre[K_MaxTit];
 typedef char T_Aut[K_MaxAut];
@@ -47,7 +49,7 @@ T_Titre titre; // Titre du livre
 T_Aut auteur; // Nom de l'auteur
 T_Edit editeur; // Nom de l'editeur
 T_annee annee; // Annee de l'edition
-// T_Emp emprunteur; // Nom de l'emprunteur et date d'emprunt
+T_Emp emprunteur; // Nom de l'emprunteur et date d'emprunt
 }  T_livre;
 
 

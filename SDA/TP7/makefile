@@ -14,5 +14,4 @@ biblio.o: biblio.c biblio.h
 	$(c) $(op) -c biblio.c
 
 clean:
-#	rm *.o exe.exe
-	del *.o exe.exe
+	rm *.o exe

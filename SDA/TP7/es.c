@@ -36,17 +36,6 @@ char * lireChaine(const char *  nomChamps,  char *chaine,int nbcarac) {
     return chaine;
 }
 
-int lireInt(const char *nomChamps, int entier) {
-    printf("%s  ",nomChamps);
-    scanf("%d", &entier); // lire du TP4 (modifiée)
-    return entier;
-}
-
 void afficherChaine(const char *nomChamp, const char *valeur) {
     printf("%s %s",nomChamp,valeur);
-}
-
-void afficherInt(const char *nomChamp, const int valeur)
-{
-    printf("%s %d", nomChamp, valeur);
 }

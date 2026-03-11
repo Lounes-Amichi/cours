@@ -21,6 +21,15 @@ int ajouterLivre(T_Bibliotheque  *ptrB);
 int afficherBibliotheque(const T_Bibliotheque  *ptrB);
 int rechercherTitre(const T_Bibliotheque * ptrB, const char * titre);
 int rechercherAuteur(const T_Bibliotheque * ptrB, const char * auteur);
-int supprimerLivre(T_Bibliotheque  *ptrB, const char * titre, const char * auteur);
+int supprimerLivre(T_Bibliotheque  *ptrB, const char * code);
+int emprunterLivre(T_Bibliotheque *ptrB, const char *code, const char *emp);
+void retournerLivre(T_Bibliotheque *ptrB, const char *code);
+void trierParTitre(T_Bibliotheque *ptrB);
+void trierParAuteur(T_Bibliotheque *ptrB);
+void trierParAnnee(T_Bibliotheque *ptrB);
+
+void lectureFichierTXT();
+void sauvegarde(T_Bibliotheque *ptrB);
+void chargement(T_Bibliotheque *ptrB);
 
 #endif
