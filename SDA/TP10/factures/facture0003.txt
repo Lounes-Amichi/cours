@@ -1,0 +1,4 @@
+
+->45 * boite_punaises (PU=3.50€) = 157.50€
+->15 * boite_trombones (PU=4.10€) = 61.50€
+->80 * boite_100enveloppes11*13 (PU=8.80€) = 704.00€
